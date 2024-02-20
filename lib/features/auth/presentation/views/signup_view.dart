@@ -35,21 +35,29 @@ class SignUpView extends StatelessWidget {
                 const CustomTextFormField(
                   hintText: 'البريد الإلكتروني',
                   suffixIcon: Icons.mail_outline,
+                  type: 'email',
                 ),
                 const Gap(20),
                 const CustomTextFormField(
                   hintText: 'كلمة السر',
                   isPassword: true,
+                   type: 'password',
                 ),
                 const Gap(20),
                 const CustomTextFormField(
                   hintText: 'رقم الهاتف',
+                   type: 'phone',
                 ),
                 const Gap(70),
                 CustomBotton(
                   title: 'إنشاء حساب',
-                  onTap: () async {
-                    if (formKey.currentState!.validate()) {}
+                  onTap: ()  {
+                    if (formKey.currentState!.validate()) {
+                      formKey.currentState!.save();
+                      Navigator.pushReplacementNamed(
+                          context, RouterNames.rSignUpView);
+                      // use the email provided here
+                    }
                   },
                 ),
                 const Gap(26),

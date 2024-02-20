@@ -1,4 +1,4 @@
-
+import 'package:aoun_donating/features/auth/presentation/widgets/validation.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/constants/colors.dart';
@@ -13,35 +13,35 @@ class CustomTextFormField extends StatelessWidget {
     this.onSaved,
     this.suffixIcon,
     this.isPassword = false,
-    this.validator,
+    this.type = 'text',
   });
 
   final String hintText;
   final IconData? suffixIcon;
   final void Function(String?)? onSaved;
   final bool isPassword;
-  final String? Function(String?)? validator;
+  final String type;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       onSaved: onSaved,
-      validator: validator,
+      validator: (value) {
+        AppValidation validator = AppValidation(type: type);
+       return validator.validation(value);
+      },
       decoration: InputDecoration(
-        hintText: hintText,
-        suffixIcon: Padding(
-            padding: const EdgeInsets.only(left: 16.0),
-            child: isPassword
-                ? const PassVisiblitiyIcon()
-                : suffixIcon == null
-                    ? null
-                    : Icon(suffixIcon, size: 36, color: MyColors.cGrayColor)),
-        hintStyle: TextStyles.textStyle20_50,
-        border: customOutlineBorder(MyColors.cGrayColor),
-        focusedBorder: customOutlineBorder(MyColors.cPrimaryColor)
-      ),
+          hintText: hintText,
+          suffixIcon: Padding(
+              padding: const EdgeInsets.only(left: 16.0),
+              child: isPassword
+                  ? const PassVisiblitiyIcon()
+                  : suffixIcon == null
+                      ? null
+                      : Icon(suffixIcon, size: 36, color: MyColors.cGrayColor)),
+          hintStyle: TextStyles.textStyle20_50,
+          border: customOutlineBorder(MyColors.cGrayColor),
+          focusedBorder: customOutlineBorder(MyColors.cPrimaryColor)),
     );
   }
-
-  
 }

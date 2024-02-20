@@ -1,6 +1,7 @@
 import 'package:aoun_donating/core/constants/colors.dart';
 import 'package:aoun_donating/core/constants/text_styles.dart';
 import 'package:aoun_donating/features/auth/presentation/widgets/custom_text_form_field.dart';
+import 'package:aoun_donating/features/auth/presentation/widgets/validation.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import '../../../../core/routes/routers_names.dart';
@@ -17,6 +18,7 @@ class LoginView extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 26),
         child: SingleChildScrollView(
           child: Form(
+            autovalidateMode: AutovalidateMode.onUserInteraction,
             key: formKey,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -30,11 +32,13 @@ class LoginView extends StatelessWidget {
                 const CustomTextFormField(
                   hintText: 'البريد الإلكتروني',
                   suffixIcon: Icons.mail_outline,
+                  type: 'email',
                 ),
                 const Gap(20),
                 const CustomTextFormField(
                   hintText: 'كلمة السر',
                   isPassword: true,
+                  type: 'password',
                 ),
                 const Gap(10),
                 Align(
@@ -54,8 +58,12 @@ class LoginView extends StatelessWidget {
                 const Gap(60),
                 GestureDetector(
                   onTap: () {
-                    Navigator.pushReplacementNamed(
-                        context, RouterNames.rSignUpView);
+                    if (formKey.currentState!.validate()) {
+                      formKey.currentState!.save();
+                      Navigator.pushReplacementNamed(
+                          context, RouterNames.rSignUpView);
+                      // use the email provided here
+                    }
                   },
                   child: Text.rich(
                     TextSpan(
