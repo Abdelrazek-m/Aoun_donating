@@ -16,7 +16,7 @@ class CustomLoginWithGoogle extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 30),
         margin: const EdgeInsets.symmetric(horizontal: 15),
-        height: 60,
+        height: 55,
         decoration: ShapeDecoration(
           shape: RoundedRectangleBorder(
             side: BorderSide(
@@ -24,7 +24,7 @@ class CustomLoginWithGoogle extends StatelessWidget {
             ),
             borderRadius: BorderRadius.circular(30),
           ),
-        ),
+        ), 
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

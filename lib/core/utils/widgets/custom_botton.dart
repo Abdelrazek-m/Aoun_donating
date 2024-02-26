@@ -20,7 +20,7 @@ class CustomBotton extends StatelessWidget {
         onTap: onTap,
         child: Container(
           width: double.infinity,
-          height: 66,
+          height: 60,
           decoration: ShapeDecoration(
             color: MyColors.cPrimaryColor,
             shape: RoundedRectangleBorder(

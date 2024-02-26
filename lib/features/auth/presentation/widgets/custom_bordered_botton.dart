@@ -23,7 +23,7 @@ class CustomBorderedBotton extends StatelessWidget {
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 30),
         margin: const EdgeInsets.symmetric(horizontal: 45),
-        height: 65,
+        height: 60,
         width: double.infinity,
         decoration: ShapeDecoration(
           shape: RoundedRectangleBorder(

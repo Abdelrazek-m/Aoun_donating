@@ -52,18 +52,19 @@ class LoginView extends StatelessWidget {
                 CustomBotton(
                   title: 'تسجيل الدخول',
                   onTap: () async {
-                    if (formKey.currentState!.validate()) {}
+                    if (formKey.currentState!.validate()) {
+                      Navigator.pushReplacementNamed(
+                          context, RouterNames.rSignUpView);
+                    }
                   },
                 ),
                 const Gap(60),
                 GestureDetector(
                   onTap: () {
-                    if (formKey.currentState!.validate()) {
-                      formKey.currentState!.save();
                       Navigator.pushReplacementNamed(
                           context, RouterNames.rSignUpView);
                       // use the email provided here
-                    }
+                    
                   },
                   child: Text.rich(
                     TextSpan(

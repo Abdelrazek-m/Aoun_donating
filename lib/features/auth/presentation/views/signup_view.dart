@@ -55,7 +55,7 @@ class SignUpView extends StatelessWidget {
                     if (formKey.currentState!.validate()) {
                       formKey.currentState!.save();
                       Navigator.pushReplacementNamed(
-                          context, RouterNames.rSignUpView);
+                          context, RouterNames.rLoginView);
                       // use the email provided here
                     }
                   },

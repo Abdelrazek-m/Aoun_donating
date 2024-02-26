@@ -28,9 +28,12 @@ class CustomTextFormField extends StatelessWidget {
       onSaved: onSaved,
       validator: (value) {
         AppValidation validator = AppValidation(type: type);
-       return validator.validation(value);
+        return validator.validation(value);
       },
+      cursorColor: MyColors.cPrimaryColor,
+
       decoration: InputDecoration(
+        contentPadding:const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
           hintText: hintText,
           suffixIcon: Padding(
               padding: const EdgeInsets.only(left: 16.0),
