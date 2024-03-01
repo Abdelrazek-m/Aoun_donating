@@ -8,11 +8,11 @@ import '../../../../core/utils/widgets/custom_botton.dart';
 import '../widgets/custom_login_with_google.dart';
 
 class SignUpView extends StatelessWidget {
-  SignUpView({super.key});
+  const SignUpView({super.key});
 
-  GlobalKey<FormState> formKey = GlobalKey();
   @override
   Widget build(BuildContext context) {
+  GlobalKey<FormState> formKey = GlobalKey();
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 26),

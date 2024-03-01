@@ -1,7 +1,6 @@
 import 'package:aoun_donating/core/constants/colors.dart';
 import 'package:aoun_donating/core/constants/text_styles.dart';
 import 'package:aoun_donating/features/auth/presentation/widgets/custom_text_form_field.dart';
-import 'package:aoun_donating/features/auth/presentation/widgets/validation.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import '../../../../core/routes/routers_names.dart';
@@ -9,10 +8,10 @@ import '../../../../core/utils/widgets/custom_botton.dart';
 import '../widgets/custom_login_with_google.dart';
 
 class LoginView extends StatelessWidget {
-  LoginView({super.key});
-  GlobalKey<FormState> formKey = GlobalKey();
+  const LoginView({super.key});
   @override
   Widget build(BuildContext context) {
+    GlobalKey<FormState> formKey = GlobalKey();
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 26),
@@ -61,10 +60,9 @@ class LoginView extends StatelessWidget {
                 const Gap(60),
                 GestureDetector(
                   onTap: () {
-                      Navigator.pushReplacementNamed(
-                          context, RouterNames.rSignUpView);
-                      // use the email provided here
-                    
+                    Navigator.pushReplacementNamed(
+                        context, RouterNames.rSignUpView);
+                    // use the email provided here
                   },
                   child: Text.rich(
                     TextSpan(
