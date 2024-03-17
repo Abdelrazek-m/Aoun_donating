@@ -31,20 +31,22 @@ class CustomTextFormField extends StatelessWidget {
         return validator.validation(value);
       },
       cursorColor: MyColors.cPrimaryColor,
-
       decoration: InputDecoration(
-        contentPadding:const EdgeInsets.symmetric(horizontal: 20, vertical: 15),
-          hintText: hintText,
-          suffixIcon: Padding(
-              padding: const EdgeInsets.only(left: 16.0),
-              child: isPassword
-                  ? const PassVisiblitiyIcon()
-                  : suffixIcon == null
-                      ? null
-                      : Icon(suffixIcon, size: 36, color: MyColors.cGrayColor)),
-          hintStyle: TextStyles.textStyle20_50,
-          border: customOutlineBorder(MyColors.cGrayColor),
-          focusedBorder: customOutlineBorder(MyColors.cPrimaryColor)),
+        contentPadding:
+            const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+        labelText: hintText,
+        labelStyle: TextStyles.textStyle20_50,
+        suffixIcon: Padding(
+            padding: const EdgeInsets.only(left: 16.0),
+            child: isPassword
+                ? const PassVisiblitiyIcon()
+                : suffixIcon == null
+                    ? null
+                    : Icon(suffixIcon, size: 36, color: MyColors.cGrayColor)),
+        hintStyle: TextStyles.textStyle20_50,
+        border: customOutlineBorder(MyColors.cGrayColor),
+        focusedBorder: customOutlineBorder(MyColors.cPrimaryColor),
+      ),
     );
   }
 }

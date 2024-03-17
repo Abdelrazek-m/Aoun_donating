@@ -42,9 +42,14 @@ class LoginView extends StatelessWidget {
                 const Gap(10),
                 Align(
                   alignment: Alignment.centerLeft,
-                  child: Text(
-                    'نسيت كلمة السر ؟',
-                    style: TextStyles.textStyle16_80,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, RouterNames.rForgetPasswordView);
+                    },
+                    child: Text(
+                      'نسيت كلمة السر ؟',
+                      style: TextStyles.textStyle16_80,
+                    ),
                   ),
                 ),
                 const Gap(70),

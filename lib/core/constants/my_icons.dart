@@ -7,4 +7,5 @@ class MyIcons{
   static String login= 'assets/images/icons/login_icon.png';
   static String menu= 'assets/images/icons/menu_icon.png';
   static String microphone= 'assets/images/icons/microphone_icon.png';
+  static String forgetPassword= 'assets/images/icons/foget_password.png';
 }
