@@ -1,4 +1,4 @@
-import 'package:aoun_donating/features/auth/presentation/widgets/validation.dart';
+import '/features/auth/presentation/widgets/validation.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/constants/colors.dart';
@@ -13,12 +13,13 @@ class CustomTextFormField extends StatelessWidget {
     this.onSaved,
     this.suffixIcon,
     this.isPassword = false,
-    this.type = 'text',
+    this.type = 'text', this.onChange,
   });
 
   final String hintText;
   final IconData? suffixIcon;
   final void Function(String?)? onSaved;
+  final void Function(String?)? onChange;
   final bool isPassword;
   final String type;
 
@@ -26,6 +27,7 @@ class CustomTextFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       onSaved: onSaved,
+      onChanged: onChange,
       validator: (value) {
         AppValidation validator = AppValidation(type: type);
         return validator.validation(value);

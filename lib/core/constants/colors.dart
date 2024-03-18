@@ -6,6 +6,7 @@ class MyColors {
   static Color cSecondaryColor = Colors.white;
   static Color cGouldColor = const Color(0xFFE2A046);
   static Color cGrayColor = const Color(0xFFD9D9D9);
+  static Color cGrayColor2 = const Color(0xffF0F5FA);
 }
 
 

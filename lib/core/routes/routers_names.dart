@@ -3,4 +3,5 @@ abstract class RouterNames {
   static const rLoginView = '/loginView';
   static const rSignUpView = '/signUpView';
   static const rForgetPasswordView = '/forgetPasswordView';
+  static const rVerifyOTPView = '/verifyOTPView';
 }

@@ -1,3 +1,4 @@
+import '../../features/auth/presentation/views/verify_otp.dart';
 import '/features/auth/presentation/views/forget_password_view.dart';
 import '/features/auth/presentation/views/login_view.dart';
 import '/features/auth/presentation/views/signup_view.dart';
@@ -10,5 +11,6 @@ abstract class AppRouter {
     RouterNames.rLoginView: (context) => const LoginView(),
     RouterNames.rSignUpView: (context) => const SignUpView(),
     RouterNames.rForgetPasswordView: (context) => const ForgetPasswordView(),
+    RouterNames.rVerifyOTPView: (context) => const VerifyOTPView(),
   };
 }
